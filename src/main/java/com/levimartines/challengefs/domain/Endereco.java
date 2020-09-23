@@ -43,4 +43,7 @@ public class Endereco {
 	@JoinColumn(name = "CID_COD")
 	private Cidade cidade;
 
+	@Column(name = "END_CEP")
+	private String cep;
+
 }

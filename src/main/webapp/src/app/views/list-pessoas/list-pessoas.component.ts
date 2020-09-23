@@ -3,11 +3,11 @@ import {Pessoa} from "../../models/pessoa.model";
 import {PessoaService} from "../../services/pessoa.service";
 
 @Component({
-    selector: 'app-pessoas',
-    templateUrl: './pessoas.component.html',
-    styleUrls: ['./pessoas.component.css']
+    selector: 'app-list-pessoas',
+    templateUrl: './list-pessoas.component.html',
+    styleUrls: ['./list-pessoas.component.css']
 })
-export class PessoasComponent implements OnInit {
+export class ListPessoasComponent implements OnInit {
     pessoas: Pessoa[];
 
     constructor(private pessoaService: PessoaService) {
@@ -20,7 +20,7 @@ export class PessoasComponent implements OnInit {
     }
 
     editar(id: number) {
-
+        console.log(id);
     }
 
     excluir(id: number) {

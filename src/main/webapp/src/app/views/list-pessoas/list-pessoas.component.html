@@ -17,6 +17,7 @@
                             <tr>
                                 <th scope="col">ID</th>
                                 <th scope="col">Nome</th>
+                                <th scope="col">Email</th>
                                 <th scope="col">Editar</th>
                                 <th scope="col">Excluir</th>
                             </tr>
@@ -25,8 +26,10 @@
                             <tr *ngFor="let p of pessoas">
                                 <th scope="row">{{p.id}}</th>
                                 <td>{{p.nome}}</td>
+                                <td>{{p.email}}</td>
                                 <td>
-                                    <button (click)="editar(p.id)" class="btn badge-info">Editar</button>
+                                    <button (click)="editar(p.id)" class="btn btn-info">Editar
+                                    </button>
                                 </td>
                                 <td>
                                     <button (click)="excluir(p.id)" class="btn btn-danger">Excluir</button>

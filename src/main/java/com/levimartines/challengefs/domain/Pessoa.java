@@ -1,6 +1,5 @@
 package com.levimartines.challengefs.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Column;
@@ -37,8 +36,9 @@ public class Pessoa {
 	@Cascade(CascadeType.ALL)
 	private List<Endereco> enderecos = new ArrayList<>();
 
-	public Pessoa(String nome) {
+	public Pessoa(String nome, String email) {
 		this.nome = nome;
+		this.email = email;
 	}
 }
 

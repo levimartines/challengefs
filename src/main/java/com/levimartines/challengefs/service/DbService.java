@@ -21,9 +21,9 @@ public class DbService {
 	private final PessoaRepository pessoaRepository;
 
 	public void instantiateTestDatabase() {
-		Pessoa p1 = new Pessoa("Levi Martines");
-		Pessoa p2 = new Pessoa("Lorem Ipsum");
-		Pessoa p3 = new Pessoa("Mussum Ipsum");
+		Pessoa p1 = new Pessoa("Levi Martines", "levi@levi.com");
+		Pessoa p2 = new Pessoa("Lorem Ipsum", "lorem@ipsum.com");
+		Pessoa p3 = new Pessoa("Mussum Ipsum", "cacilds@mussum.com");
 		pessoaRepository.saveAll(Arrays.asList(p1, p2, p3));
 
 		Cidade cidade = new Cidade(null, "Sorocaba", Estado.SAO_PAULO);
@@ -35,21 +35,21 @@ public class DbService {
 
 		Endereco end = new Endereco(null, p1.getId(), "R: Sao Paulo",
 			"123", "Sem complemento",
-			"Jd. SP", cidade);
+			"Jd. SP", cidade, "18051-313");
 		Endereco end2 = new Endereco(null, p1.getId(), "Av Sao Paulo II",
-			"83", "Apto. 3", "Jd. Campos de SP", cidade);
+			"83", "Apto. 3", "Jd. Sampa", cidade, "18021-314");
 
 		Endereco end3 = new Endereco(null, p1.getId(), "R: Sorocaba.",
-			"1", "Casa de esquina", "Bairro das Pedras", cidade2);
+			"1", "Casa de esquina", "Sorocity", cidade2, "18055-923");
 
 		Endereco end4 = new Endereco(null, p2.getId(), "R: Belo Horizonte",
-			"1024", "", "Jd. dos Morros", cidade3);
+			"1024", "", "BH", cidade3, "18011-314");
 
 		Endereco end5 = new Endereco(null, p2.getId(), "R: Uberlandia",
-			"562", "Casa do fundo", "Bairro de Uberlandia", cidade4);
+			"562", "Casa do fundo", "Uberlandia", cidade4, "14046-111");
 
 		Endereco end6 = new Endereco(null, p3.getId(), "R: Salvador",
-			"324", null, "Carnaval", cidade5);
+			"324", null, "Salvador Denovo", cidade5, "11111-111");
 		endRepository.saveAll(Arrays.asList(end, end2, end3, end4, end5, end6));
 	}
 }
