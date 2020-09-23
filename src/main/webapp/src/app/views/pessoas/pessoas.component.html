@@ -1,0 +1,47 @@
+<div class="row">
+    <div class="col-md-2">&nbsp;</div>
+
+    <div class="col-md-8">
+        <div class="card" id="listaPessoas">
+            <div class="card-header">
+                <h3 class="panel-title">Pessoas cadastradas</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Nome</th>
+                                <th scope="col">Editar</th>
+                                <th scope="col">Excluir</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr *ngFor="let p of pessoas">
+                                <th scope="row">{{p.id}}</th>
+                                <td>{{p.nome}}</td>
+                                <td>
+                                    <button (click)="editar(p.id)" class="btn badge-info">Editar</button>
+                                </td>
+                                <td>
+                                    <button (click)="excluir(p.id)" class="btn btn-danger">Excluir</button>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                        <a href="#" class="btn btn-success">Cadastrar</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-2">&nbsp;</div>
+</div>
