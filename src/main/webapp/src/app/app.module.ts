@@ -8,12 +8,14 @@ import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {ListPessoasComponent} from './views/list-pessoas/list-pessoas.component';
 import {AddPessoaComponent} from './views/add-pessoa/add-pessoa.component';
+import {EditPessoaComponent} from './views/edit-pessoa/edit-pessoa.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         ListPessoasComponent,
-        AddPessoaComponent
+        AddPessoaComponent,
+        EditPessoaComponent
     ],
     imports: [
         BrowserModule,

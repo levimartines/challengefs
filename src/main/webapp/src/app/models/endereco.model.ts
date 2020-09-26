@@ -1,3 +1,5 @@
+import {Cidade} from "./cidade.model";
+
 export interface Endereco {
 
     id: number;
@@ -6,5 +8,5 @@ export interface Endereco {
     numero: number;
     complemento: string;
     bairro: string;
-    cidades: string;
+    cidade: Cidade;
 }

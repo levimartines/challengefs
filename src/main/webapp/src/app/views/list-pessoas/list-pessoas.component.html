@@ -28,8 +28,10 @@
                                 <td>{{p.nome}}</td>
                                 <td>{{p.email}}</td>
                                 <td>
-                                    <button (click)="editar(p.id)" class="btn btn-info">Editar
-                                    </button>
+                                    <a [routerLink]="'pessoa/' + p.id">
+                                        <button class="btn btn-info">Editar
+                                        </button>
+                                    </a>
                                 </td>
                                 <td>
                                     <button (click)="excluir(p.id)" class="btn btn-danger">Excluir</button>

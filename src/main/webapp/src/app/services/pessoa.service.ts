@@ -9,16 +9,28 @@ export class PessoaService {
     constructor(private http: HttpClient) {
     }
 
-    getPessoas() {
+    getAll() {
         return this.http.get(this.BASE_URL + '/api/pessoas');
     }
 
-    addPessoa(obj: any) {
+    getById(id: number) {
+        return this.http.get(this.BASE_URL + '/api/pessoas/' + id);
+    }
+
+    save(obj: any) {
         return this.http.post(this.BASE_URL + '/api/pessoas', obj);
     }
 
-    deletePessoa(id) {
+    delete(id) {
         return this.http.delete(this.BASE_URL + '/api/pessoas/' + id);
+    }
+
+    update(obj: any, id: number) {
+        return this.http.put(this.BASE_URL + '/api/pessoas/' + id, obj);
+    }
+
+    getEnderecosByPessoaId(id: number) {
+        return this.http.get(this.BASE_URL + '/api/pessoas/' + id + '/enderecos');
     }
 
 }

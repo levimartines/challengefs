@@ -32,7 +32,7 @@ public class Pessoa {
 	@Column(name = "PES_EMAIL")
 	private String email;
 
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "pessoa")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "pessoa")
 	@Cascade(CascadeType.ALL)
 	private List<Endereco> enderecos = new ArrayList<>();
 

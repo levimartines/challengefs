@@ -14,7 +14,7 @@ export class ListPessoasComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.pessoaService.getPessoas().subscribe((res: Pessoa[]) => {
+        this.pessoaService.getAll().subscribe((res: Pessoa[]) => {
             this.pessoas = res;
         });
     }
@@ -24,7 +24,7 @@ export class ListPessoasComponent implements OnInit {
     }
 
     excluir(id: number) {
-        this.pessoaService.deletePessoa(id).subscribe(() => {
+        this.pessoaService.delete(id).subscribe(() => {
             let index = this.pessoas.findIndex(p => p.id == id);
             if (index > -1) {
                 this.pessoas.splice(index, 1);

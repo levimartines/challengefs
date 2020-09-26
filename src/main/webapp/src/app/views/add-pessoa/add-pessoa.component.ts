@@ -32,15 +32,17 @@ export class AddPessoaComponent implements OnInit {
     }
 
     onSubmit() {
+        this.loading = true;
         this.submitted = true;
         if (this.form.invalid) {
             return;
         }
-        this.pessoaService.addPessoa(this.form.value).subscribe((res: Pessoa) => {
+        this.pessoaService.save(this.form.value).subscribe((res: Pessoa) => {
                 alert(res.nome + " cadastrado com Sucesso!");
                 this.router.navigate(['/']).then();
             },
             error => {
+                this.loading = false;
                 console.log(error)
             }
         );
