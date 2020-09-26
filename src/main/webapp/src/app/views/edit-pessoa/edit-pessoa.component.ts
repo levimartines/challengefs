@@ -58,7 +58,7 @@ export class EditPessoaComponent implements OnInit {
         return this.form.controls;
     }
 
-    onSubmit() {
+    save() {
         this.loading = true;
         this.submitted = true;
         if (this.form.invalid) {

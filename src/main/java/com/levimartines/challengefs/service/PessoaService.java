@@ -36,4 +36,11 @@ public class PessoaService {
 		Pessoa pessoa = new Pessoa(dto.getNome(), dto.getEmail());
 		return pessoaRepository.save(pessoa);
 	}
+
+	public Pessoa update(PessoaDTO dto, Long pessoaId) {
+		Pessoa pessoa = findById(pessoaId);
+		pessoa.setNome(dto.getNome());
+		pessoa.setEmail(dto.getEmail());
+		return pessoaRepository.save(pessoa);
+	}
 }

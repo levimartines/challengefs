@@ -35,12 +35,12 @@ public class DbService {
 
 		Endereco end = new Endereco(null, p1.getId(), "R: Sao Paulo",
 			"123", "Sem complemento",
-			"Jd. SP", cidade, "18051-313");
+			"Jd. SP", cidade2, "18051-313");
 		Endereco end2 = new Endereco(null, p1.getId(), "Av Sao Paulo II",
-			"83", "Apto. 3", "Jd. Sampa", cidade, "18021-314");
+			"83", "Apto. 3", "Jd. Sampa", cidade2, "18021-314");
 
 		Endereco end3 = new Endereco(null, p1.getId(), "R: Sorocaba.",
-			"1", "Casa de esquina", "Sorocity", cidade2, "18055-923");
+			"1", "Casa de esquina", "Sorocity", cidade, "18055-923");
 
 		Endereco end4 = new Endereco(null, p2.getId(), "R: Belo Horizonte",
 			"1024", "", "BH", cidade3, "18011-314");
