@@ -1,10 +1,12 @@
 package com.levimartines.challengefs.service;
 
 import com.levimartines.challengefs.domain.Pessoa;
+import com.levimartines.challengefs.dto.PessoaDTO;
 import com.levimartines.challengefs.exceptions.ObjectNotFoundException;
 import com.levimartines.challengefs.repository.PessoaRepository;
 import java.util.List;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class PessoaService {
@@ -15,6 +17,7 @@ public class PessoaService {
 		this.pessoaRepository = pessoaRepository;
 	}
 
+	@Transactional(readOnly = true)
 	public List<Pessoa> listPessoas() {
 		return pessoaRepository.findAll();
 	}
@@ -29,7 +32,8 @@ public class PessoaService {
 		pessoaRepository.delete(pessoa);
 	}
 
-	public Pessoa save(Pessoa task) {
-		return pessoaRepository.save(task);
+	public Pessoa save(PessoaDTO dto) {
+		Pessoa pessoa = new Pessoa(dto.getNome(), dto.getEmail());
+		return pessoaRepository.save(pessoa);
 	}
 }

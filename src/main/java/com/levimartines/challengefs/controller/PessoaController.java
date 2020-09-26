@@ -1,6 +1,6 @@
 package com.levimartines.challengefs.controller;
 
-import com.levimartines.challengefs.domain.Pessoa;
+import com.levimartines.challengefs.dto.PessoaDTO;
 import com.levimartines.challengefs.service.PessoaService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -29,8 +29,8 @@ public class PessoaController {
 	}
 
 	@PostMapping
-	public ResponseEntity<?> save(@RequestBody Pessoa pessoa) {
-		return ResponseEntity.ok(pessoaService.save(pessoa));
+	public ResponseEntity<?> save(@RequestBody PessoaDTO dto) {
+		return ResponseEntity.ok(pessoaService.save(dto));
 	}
 
 	@DeleteMapping("/{id}")

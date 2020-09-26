@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {PessoaService} from "../../services/pessoa.service";
+import {Pessoa} from "../../models/pessoa.model";
+import {Router} from "@angular/router";
 
 @Component({
     selector: 'app-add-pessoa',
@@ -7,17 +10,40 @@ import {ActivatedRoute} from "@angular/router";
     styleUrls: ['./add-pessoa.component.css']
 })
 export class AddPessoaComponent implements OnInit {
-    id: number = 0;
+    form: FormGroup;
+    submitted = false;
+    loading = false;
 
     constructor(
-        private route: ActivatedRoute,
-    ) {
+        private pessoaService: PessoaService,
+        private formBuilder: FormBuilder,
+        private router: Router) {
     }
 
     ngOnInit() {
-        this.route.queryParams.subscribe(params => {
-            this.id = params['id'];
+        this.form = this.formBuilder.group({
+            nome: ['', Validators.required],
+            email: ['', [Validators.required, Validators.email]],
         });
+    }
+
+    get f() {
+        return this.form.controls;
+    }
+
+    onSubmit() {
+        this.submitted = true;
+        if (this.form.invalid) {
+            return;
+        }
+        this.pessoaService.addPessoa(this.form.value).subscribe((res: Pessoa) => {
+                alert(res.nome + " cadastrado com Sucesso!");
+                this.router.navigate(['/']).then();
+            },
+            error => {
+                console.log(error)
+            }
+        );
     }
 
 }

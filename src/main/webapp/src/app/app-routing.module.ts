@@ -8,7 +8,7 @@ const routes: Routes = [
     {
         path: '', component: ListPessoasComponent,
     }, {
-        path: 'edit/:id', component: AddPessoaComponent
+        path: 'cadastrar', component: AddPessoaComponent
     }
 ];
 

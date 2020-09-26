@@ -5,7 +5,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {PessoaService} from "./services/pessoa.service";
 import {HttpClientModule} from "@angular/common/http";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {ListPessoasComponent} from './views/list-pessoas/list-pessoas.component';
 import {AddPessoaComponent} from './views/add-pessoa/add-pessoa.component';
 
@@ -19,7 +19,8 @@ import {AddPessoaComponent} from './views/add-pessoa/add-pessoa.component';
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
-        FormsModule
+        FormsModule,
+        ReactiveFormsModule
     ],
     providers: [PessoaService],
     bootstrap: [AppComponent]
