@@ -1,5 +1,6 @@
 package com.levimartines.challengefs.domain;
 
+import com.levimartines.challengefs.dto.PessoaDTO;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Column;
@@ -29,7 +30,7 @@ public class Pessoa {
 	@Column(name = "PES_NOME")
 	private String nome;
 
-	@Column(name = "PES_EMAIL")
+	@Column(name = "PES_EMAIL", unique = true)
 	private String email;
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "pessoa")
@@ -39,6 +40,11 @@ public class Pessoa {
 	public Pessoa(String nome, String email) {
 		this.nome = nome;
 		this.email = email;
+	}
+
+	public Pessoa(PessoaDTO dto) {
+		this.nome = dto.getNome();
+		this.email = dto.getEmail();
 	}
 }
 

@@ -56,7 +56,7 @@ public class PessoaController {
 
 	@PostMapping
 	public ResponseEntity<Pessoa> save(@RequestBody @Valid PessoaDTO dto) {
-		return ResponseEntity.ok(pessoaService.save(dto));
+		return ResponseEntity.ok(pessoaService.saveDto(dto));
 	}
 
 	@DeleteMapping("/{id}")

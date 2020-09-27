@@ -26,11 +26,11 @@ public class DbService {
 		Pessoa p3 = new Pessoa("Mussum Ipsum", "cacilds@mussum.com");
 		pessoaRepository.saveAll(Arrays.asList(p1, p2, p3));
 
-		Cidade cidade = new Cidade(null, "Sorocaba", Estado.SAO_PAULO);
-		Cidade cidade2 = new Cidade(null, "São Paulo", Estado.SAO_PAULO);
-		Cidade cidade3 = new Cidade(null, "Belo Horizonte", Estado.MINAS_GERAIS);
-		Cidade cidade4 = new Cidade(null, "Uberlândia", Estado.MINAS_GERAIS);
-		Cidade cidade5 = new Cidade(null, "Salvador", Estado.BAHIA);
+		Cidade cidade = new Cidade(null, "Sorocaba", Estado.SP);
+		Cidade cidade2 = new Cidade(null, "São Paulo", Estado.SP);
+		Cidade cidade3 = new Cidade(null, "Belo Horizonte", Estado.MG);
+		Cidade cidade4 = new Cidade(null, "Uberlândia", Estado.MG);
+		Cidade cidade5 = new Cidade(null, "Salvador", Estado.BH);
 		cidadeRepository.saveAll(Arrays.asList(cidade, cidade2, cidade3, cidade4, cidade5));
 
 		Endereco end = new Endereco(null, p1.getId(), "R: Sao Paulo",

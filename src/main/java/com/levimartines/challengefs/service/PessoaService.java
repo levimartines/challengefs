@@ -22,6 +22,7 @@ public class PessoaService {
 		return pessoaRepository.findAll();
 	}
 
+	@Transactional(readOnly = true)
 	public Pessoa findById(Long id) {
 		return pessoaRepository.findById(id).orElseThrow(
 			() -> new ObjectNotFoundException("Objeto nao encontrado."));
@@ -32,8 +33,8 @@ public class PessoaService {
 		pessoaRepository.delete(pessoa);
 	}
 
-	public Pessoa save(PessoaDTO dto) {
-		Pessoa pessoa = new Pessoa(dto.getNome(), dto.getEmail());
+	public Pessoa saveDto(PessoaDTO dto) {
+		Pessoa pessoa = new Pessoa(dto);
 		return pessoaRepository.save(pessoa);
 	}
 
