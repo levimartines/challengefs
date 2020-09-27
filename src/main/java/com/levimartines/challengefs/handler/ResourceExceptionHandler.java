@@ -23,5 +23,10 @@ class ResourceExceptionHandler {
 	public ResponseEntity<Void> invalidInputHandler() {
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
 	}
+
+	@ExceptionHandler({Exception.class})
+	public ResponseEntity<Void> genericHandler() {
+		return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+	}
 }
 
